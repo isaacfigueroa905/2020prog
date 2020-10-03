@@ -4,7 +4,7 @@
 
 typedef struct
 {
-    int idLegajo;
+    int legajo;
     char nombre[51];
     char apellido[51];
     float salario;
@@ -96,7 +96,7 @@ void OrdenarEmpleadosPorSector(eEmpleado[], int);
 
 
 
-//int CantidadQueSuperanSueldoPromedio(eEmpleado listado[], int cant );
+
 
 /** \brief La suma de los sueldos de todos los empleados.
  *
@@ -116,7 +116,7 @@ float TotalSueldos(eEmpleado [], int  );
  * \return float Retorna el promedio de los sueldos.
  *
  */
-float CalculaPromedioSalarial(eEmpleado[],int );
+float CalculaPromedioSalarial(eEmpleado[] ,float );
 
 
 
@@ -131,7 +131,7 @@ float CalculaPromedioSalarial(eEmpleado[],int );
  *
  */
 
-int InicializadorEstados(eEmpleado[],int );
+void InicializadorEstados(eEmpleado[],int );
 
 
 /** \brief Busca lugar libre para la carga de empleados.
@@ -142,6 +142,27 @@ int InicializadorEstados(eEmpleado[],int );
  *
  */
 
-int BuscarLibre(eEmpleado[], int);//
+int BuscarLibre(eEmpleado[], int);
 
 
+//------------Funciones de modificacion y eliminacion de datos.
+
+/** \brief Elimina un empleado ingresando su legajo luego de confirmar.
+ *
+ * \param eEmpleado[]
+ * \param int
+ * \return void
+ *
+ */
+void EliminarEmpleado(eEmpleado[], int );
+
+
+/** \brief Modifica el dato de un empleado  a eleccion del usuario.
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+
+void ModificarDatoEmpleado(eEmpleado[],int);

@@ -3,7 +3,7 @@
 #include "ArrayEmployees.h"
 #include <stdlib.h>
 
-#define TAM 3
+#define TAM 100
 
 int main()
 {
@@ -24,7 +24,9 @@ int main()
         printf("\n\t\t\t\t 3. BAJAS");
         printf("\n\t\t\t\t 4. INFORMAR");
         printf("\n\t\t\t\t 0. SALIR");
-        printf("\n\t\t\t\t Seleccione una opcion:  ");
+
+        printf("\n\n\t\t\t\t Seleccione una opcion:  ");
+
         scanf("%d",&opcion);
         while(opcion<0 || opcion>4)
         {
@@ -38,11 +40,29 @@ int main()
                  banderaPrimerIngreso=1;
             break;
             case 2:
-                printf("eliminar");
+                if(banderaPrimerIngreso==1)
+                {
+                    ModificarDatoEmpleado(empleados,TAM);
+                }
+                else
+                {
+                    printf("\n\t\t\t\t No se ingresaron empleados\n!!!");
+                }
+
             break;
             case 3:
-                printf("modificar");
+                if (banderaPrimerIngreso ==1 )
+                {
+
+                    EliminarEmpleado(empleados,TAM);
+
+                }
+                else
+                {
+                    printf("\n\t\t\t\t No se ingresaron empleados\n!!!");
+                }
             break;
+
             case 4:
                 if(banderaPrimerIngreso==1)
                 {
@@ -71,7 +91,7 @@ int main()
                     }
                     if(opciones=='c')
                     {
-                        printf("el sueldo promedio es: %.2f ",CalculaPromedioSalarial(empleados,TAM) );
+                        printf("el sueldo promedio es: %.2f ",  CalculaPromedioSalarial(empleados,TAM) );
 
                     }
                     if(opciones=='d')
@@ -84,7 +104,7 @@ int main()
                 }
                 else
                 {
-                    printf("\n\t\t\t\t\t Nada para mostrar!!!");
+                    printf("\n\t\t\t\t\t Nada para mostrar!!!\n");
 
                 }
 
